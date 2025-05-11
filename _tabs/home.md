@@ -5,8 +5,6 @@ order: 0
 layout: page
 ---
 
-<link rel="stylesheet" href="/assets/css/landing.css" />
-
 <!-- Hero Section -->
 <section class="hero">
   <h1>I am <span class="typed-text"></span></h1>
