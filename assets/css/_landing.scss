@@ -1,14 +1,6 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: rgb(68, 69, 70);
-  color: rgb(68, 69, 70);
-  text-align: center;
-}
-
-.hero {
-  background: url('/assets/img/profile.jpeg') center center/cover no-repeat;
-  color: rgb(20, 16, 16);
+.home-landing .hero {
+  background: url('/assets/img/profile-bg.jpg') center center/cover no-repeat;
+  color: white;
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -17,86 +9,51 @@ body {
   padding: 0 20px;
 }
 
-.typed-text {
+.home-landing .typed-text {
   font-size: 2rem;
   font-weight: bold;
   color: #ffd600;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.skills {
-  margin: 40px auto;
-}
-
-.skills h2 {
-  margin-bottom: 20px;
-}
-
-.skills-table {
+.home-landing .skills {
   max-width: 900px;
-  margin: 0 auto;
-  text-align: left;
-  font-size: 1rem;
-  line-height: 1.8;
+  margin: 40px auto;
   padding: 0 20px;
-  color: rgb(175, 176, 177);
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-.skills-table p {
-  margin: 8px 0;
-  color: rgb(175, 176, 177);
+.home-landing .skills p {
+  margin-bottom: 8px;
 }
 
-.skills-table strong {
+.home-landing .skills p strong {
   display: inline-block;
   width: 160px;
-  color: rgb(175, 176, 177);
+  color: #ccc;
 }
 
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.skill-tags span {
-  background: rgb(175, 176, 177);
-  color: #333;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.projects {
+.home-landing .projects {
   max-width: 1000px;
-  margin: 60px auto;
+  margin: 50px auto;
   padding: 0 20px;
   text-align: center;
 }
 
-.projects h2 {
+.home-landing .projects h2 {
   margin-bottom: 20px;
   color: var(--heading-color, #ccc);
 }
 
-.project-grid {
+.home-landing .project-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
 }
 
-.project-card {
+.home-landing .project-card {
   background: #1f1f1f;
   border-radius: 12px;
   overflow: hidden;
@@ -107,22 +64,35 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.project-card:hover {
+.home-landing .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.4); /* gold glow */
+  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.4);
 }
 
-.project-card img {
+.home-landing .project-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   display: block;
 }
 
-.project-card p {
+.home-landing .project-card p {
   margin: 0;
   padding: 15px;
   font-size: 1rem;
   font-weight: 600;
   color: #ffd600;
+}
+
+.home-landing {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
