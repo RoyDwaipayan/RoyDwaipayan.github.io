@@ -87,6 +87,12 @@
   color: #ffd600;
 }
 
+img.no-lightbox,
+a.no-lightbox img {
+  cursor: pointer; /* remove magnifying glass */
+  pointer-events: auto; /* ensure it's clickable */
+}
+
 .home-landing {
   animation: fadeIn 0.6s ease;
 }

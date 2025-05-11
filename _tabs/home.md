@@ -27,11 +27,11 @@ layout: page
   <section class="projects">
     <h2>Projects</h2>
     <div class="project-grid">
-      <a href="/project/diabetes" class="project-card">
+      <a href="/project/diabetes" class="project-card no-lightbox">
         <img src="/assets/img/diabetes.png" alt="Diabetes Project" />
         <p>Diabetes Prediction</p>
       </a>
-      <a href="/project/retail" class="project-card">
+      <a href="/project/retail" class="project-card no-lightbox">
         <img src="/assets/img/retail.png" alt="Retail Forecasting" />
       </a>
         <p>Retail Forecasting</p>
@@ -41,3 +41,15 @@ layout: page
 
   <script src="/assets/js/typed.js"></script>
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('img').forEach(img => {
+      if (img.closest('.no-lightbox')) {
+        img.classList.remove('zoomable');  // remove lightbox trigger class
+        img.removeAttribute('data-zoom-src');
+      }
+    });
+  });
+</script>
