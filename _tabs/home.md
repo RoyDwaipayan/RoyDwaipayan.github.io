@@ -34,7 +34,7 @@ layout: page
       <p>Diabetes Prediction</p>
     </a>
     <a href="/project/retail" class="project-card">
-      <img src="/assets/img/retail.png" alt="Retail Project" />
+      <img src="/assets/img/retail.png" alt="Retail Forecasting" />
       <p>Retail Forecasting</p>
     </a>
   </div>
