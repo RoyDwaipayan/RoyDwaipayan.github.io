@@ -30,7 +30,7 @@ title: "Home"
         <p><strong>Languages:</strong> Python, SQL, R, Apex, Java, NoSQL</p>
         <p>
           <strong>Tools:</strong> Power BI, Tableau, Advanced Excel, Azure,
-          GitHub, KNIME, Jira, Looker, Qlik Sense, BigQuery, Streamlit
+          GitHub, KNIME, Jira, Confluence, Qlik Sense, BigQuery, Streamlit
         </p>
         <p>
           <strong>ML & Analytics:</strong> Machine Learning, Deep Learning, NLP,
