@@ -27,15 +27,14 @@ layout: page
   <section class="projects">
     <h2>Projects</h2>
     <div class="project-grid">
-      <a href="/project/diabetes" class="project-card no-lightbox">
+      <a href="/project/diabetes" class="project-card">
         <img src="/assets/img/diabetes.png" alt="Diabetes Project" />
-        <p>Diabetes Prediction</p>
+        <div class="card-title">Diabetes Prediction</div>
       </a>
-      <a href="/project/retail" class="project-card no-lightbox">
+      <a href="/project/retail" class="project-card">
         <img src="/assets/img/retail.png" alt="Retail Forecasting" />
+        <div class="card-title">Retail Forecasting</div>
       </a>
-        <p>Retail Forecasting</p>
-      <!-- Add more cards here -->
     </div>
   </section>
 
