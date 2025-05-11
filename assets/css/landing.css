@@ -9,7 +9,7 @@ body {
 .hero {
   position: relative;
   height: 80vh;
-  background: url('/assets/img/profile-bg.jpg') center center/cover no-repeat;
+  background: url('/assets/img/profile.jpeg') center center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
