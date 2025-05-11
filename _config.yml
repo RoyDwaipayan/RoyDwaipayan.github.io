@@ -24,19 +24,12 @@ description: >- # used by seo meta and the atom feed
   AI/ML models, Causal analytics, and automating data pipelines, handling large-scale datasets leveraging Spark. Proficient in cloud
   platforms like Snowflake and Azure, with hands-on expertise in tools like Power BI, Qlik Sense, and Tableau.
 
-# Fill in the protocol & hostname for your site.
-# E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: ""
 
 github:
   username: RoyDwaipayan # change to your GitHub username
 
-# twitter:
-#   username: twitter_username # change to your Twitter username
-
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Dwaipayan Roy
   email: dwaipayan.roy@utdallas.edu # change to your email address
   links:
@@ -47,50 +40,10 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-# Site Verification Settings
-webmaster_verifications:
-  google: # fill in your Google verification code
-  bing: # fill in your Bing verification code
-  alexa: # fill in your Alexa verification code
-  yandex: # fill in your Yandex verification code
-  baidu: # fill in your Baidu verification code
-  facebook: # fill in your Facebook verification code
-
-# ↑ --------------------------
-# The end of `jekyll-seo-tag` settings
-
-# Web Analytics Settings
-analytics:
-  google:
-    id: # fill in your Google Analytics ID
-  goatcounter:
-    id: # fill in your GoatCounter ID
-  umami:
-    id: # fill in your Umami ID
-    domain: # fill in your Umami domain
-  matomo:
-    id: # fill in your Matomo ID
-    domain: # fill in your Matomo domain
-  cloudflare:
-    id: # fill in your Cloudflare Web Analytics token
-  fathom:
-    id: # fill in your Fathom Site ID
-
 # Page views settings
 pageviews:
   provider: # now only supports 'goatcounter'
 
-# Prefer color scheme setting.
-#
-# Note: Keep empty will follow the system prefer color by default,
-# and there will be a toggle to switch the theme between dark and light
-# on the bottom left of the sidebar.
-#
-# Available options:
-#
-#     light — Use the light color scheme
-#     dark — Use the dark color scheme
-#
 theme_mode: # [light | dark]
 
 # The CDN endpoint for media resources.

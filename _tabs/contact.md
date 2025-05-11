@@ -18,8 +18,8 @@ Feel free to reach out to me for opportunities, collaborations, or questions.
 ---
 
 ### 🔗 Connect with Me
-- [LinkedIn](https://www.linkedin.com/in/dwaipayanroy)
-- [GitHub](https://github.com/dwaipayanroy)
+- [LinkedIn](https://www.linkedin.com/in/dwaipayan08/)
+- [GitHub](https://github.com/RoyDwaipayan)
 - [Resume](https://RoyDwaipayan.github.io/assets/assets/DwaipayanRoy_Resume.pdf)
 
 ---

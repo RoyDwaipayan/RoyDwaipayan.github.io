@@ -6,7 +6,7 @@ layout: page
 
 ### Dwaipayan Roy  
 **Data Scientist | Business Analytics & AI | M.S. @ UT Dallas**  
-📍 Richardson, TX • 📧 dwaipayan.roy@example.com • 🌐 [LinkedIn](https://www.linkedin.com/in/dwaipayanroy)
+📍 Richardson, TX • 📧 dwaipayan.roy@example.com • 🌐 [LinkedIn](https://www.linkedin.com/in/dwaipayan08/)
 
 ---
 

@@ -1,7 +1,12 @@
 ---
-layout: home
-title: "Home"
+title: Home
+icon: fas fa-home
+order: 0
+layout: page
 ---
+
+<link rel="stylesheet" href="/assets/css/landing.css" />
+
 <!-- Hero Section -->
 <section class="hero">
   <img src="/assets/img/profile.jpeg" alt="Dwaipayan Roy" class="hero-image" />
@@ -14,10 +19,10 @@ title: "Home"
   <div class="skills-table">
     <p><strong>Languages:</strong> Python, SQL, R, Apex, Java, NoSQL</p>
     <p><strong>Tools:</strong> Power BI, Tableau, Advanced Excel, Azure, GitHub, KNIME, Jira, Confluence, Qlik Sense, BigQuery, Streamlit</p>
-    <p><strong>ML & Analytics:</strong> Machine Learning, Deep Learning, NLP, Time Series, Causal Inference, Prompt Engineering, Forecasting, LLM Fine Tuning, RAG, AI Agents, Data Visualization</p>
-    <p><strong>Frameworks:</strong> TensorFlow, PyTorch, Scikit-learn, statsmodels, XGBoost, Pandas, NumPy, PySpark, OpenAI, LangChain, Matplotlib</p>
-    <p><strong>Cloud:</strong> Microsoft Azure, Snowflake, Google Analytics</p>
-    <p><strong>Certifications:</strong> Udemy Data Scientist, Power BI Dashboards, Google Analytics, KNIME Analytics L3</p>
+    <p><strong>ML & Analytics:</strong> ML, Deep Learning, NLP, Time Series, Causal Inference, Prompt Engineering, LLM Fine Tuning, RAG</p>
+    <p><strong>Frameworks:</strong> TensorFlow, PyTorch, Scikit-learn, XGBoost, LangChain, Matplotlib</p>
+    <p><strong>Cloud:</strong> Azure, Snowflake, Google Analytics</p>
+    <p><strong>Certifications:</strong> KNIME Analytics L3, Power BI Dashboards, Google Analytics</p>
   </div>
 </section>
 
@@ -26,11 +31,11 @@ title: "Home"
   <h2>Projects</h2>
   <div class="project-grid">
     <a href="/project/diabetes" class="project-card">
-      <img src="/assets/img/diabetes.png" alt="Diabetes Prediction" />
+      <img src="/assets/img/diabetes.png" alt="Diabetes Project" />
       <p>Diabetes Prediction</p>
     </a>
     <a href="/project/retail" class="project-card">
-      <img src="/assets/img/retail.png" alt="Retail Forecasting" />
+      <img src="/assets/img/retail.png" alt="Retail Project" />
       <p>Retail Forecasting</p>
     </a>
   </div>
