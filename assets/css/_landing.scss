@@ -1,5 +1,5 @@
 .home-landing .hero {
-  background: url('/assets/img/profile-bg.jpg') center center/cover no-repeat;
+  background: url('/assets/img/profile.jpeg') center center/cover no-repeat;
   color: white;
   min-height: 80vh;
   display: flex;
@@ -13,6 +13,7 @@
   font-size: 2rem;
   font-weight: bold;
   color: #ffd600;
+  text-align: left;
 }
 
 .home-landing .skills {
@@ -38,7 +39,6 @@
   max-width: 1000px;
   margin: 50px auto;
   padding: 0 20px;
-  text-align: center;
 }
 
 .home-landing .projects h2 {
