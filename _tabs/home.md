@@ -9,7 +9,6 @@ layout: page
 
 <!-- Hero Section -->
 <section class="hero">
-  <img src="/assets/img/profile.jpeg" alt="Dwaipayan Roy" class="hero-image" />
   <h1>I am <span class="typed-text"></span></h1>
 </section>
 
