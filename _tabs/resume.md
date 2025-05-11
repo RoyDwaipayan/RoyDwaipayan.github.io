@@ -50,8 +50,8 @@ series analysis using Einstein Analytics into Sales Cloud, aimed to reduce proce
 
 **The University of Texas at Dallas**  
 *Dec 2025*
-- Master of Science, Business Analytics and Artificial Intelligence, Data Science Track 
-GPA - 4.0
+- Master of Science, Business Analytics and Artificial Intelligence, Data Science Track  
+- GPA - 4.0
 - Achievements: UT Dallas Dean’s Excellence Scholarship
 - Courseworks: Applied Machine Learning, Advanced Statistics, Large Language Models (LLM), Predictive Analytics, Prescriptive
 Analytics, Database Management, Natural Language Processing, Econometrics and Time Series Analysis

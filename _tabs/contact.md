@@ -9,7 +9,7 @@ Feel free to reach out to me for opportunities, collaborations, or questions.
 ---
 
 ### 📫 Email
-**Work -** [dwaipayan.roy@utdallas.edu](mailto:dwaipayan.roy@utdallas.edu)
+**Work -** [dwaipayan.roy@utdallas.edu](mailto:dwaipayan.roy@utdallas.edu)  <br>
 **Personal -** [dwaipayan.roy@utdallas.edu](mailto:dwaipayan08.utd@gmail.com)  
 
 ### 📫 Contact No.
