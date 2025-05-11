@@ -24,7 +24,8 @@ description: >- # used by seo meta and the atom feed
   AI/ML models, Causal analytics, and automating data pipelines, handling large-scale datasets leveraging Spark. Proficient in cloud
   platforms like Snowflake and Azure, with hands-on expertise in tools like Power BI, Qlik Sense, and Tableau.
 
-url: ""
+url: "https://RoyDwaipayan.github.io"
+baseurl: "/RoyDwaipayan"
 
 github:
   username: RoyDwaipayan # change to your GitHub username
@@ -51,7 +52,7 @@ theme_mode: # [light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn: "https://chirpy-img.netlify.app"
+# cdn: "https://chirpy-img.netlify.app"
 
 sidebar:
   avatar: true
