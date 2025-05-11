@@ -9,8 +9,8 @@ Feel free to reach out to me for opportunities, collaborations, or questions.
 ---
 
 ### 📫 Email
-**Work -** [dwaipayan.roy@utdallas.edu](dwaipayan.roy@utdallas.edu)
-**Personal -** [dwaipayan.roy@utdallas.edu](dwaipayan08.utd@gmail.com)  
+**Work -** [dwaipayan.roy@utdallas.edu](mailto:dwaipayan.roy@utdallas.edu)
+**Personal -** [dwaipayan.roy@utdallas.edu](mailto:dwaipayan08.utd@gmail.com)  
 
 ### 📫 Contact No.
 **+1 (972) 897-3997** 
