@@ -26,29 +26,22 @@ layout: page
   <!-- Projects Section -->
   <section class="projects">
     <h2>Projects</h2>
-    <div class="project-grid">
-      <a href="/project/diabetes" class="project-card">
-        <img src="/assets/img/diabetes.png" alt="Diabetes Project" />
-        <div class="card-title">Diabetes Prediction</div>
-      </a>
-      <a href="/project/retail" class="project-card">
-        <img src="/assets/img/retail.png" alt="Retail Forecasting" />
-        <div class="card-title">Retail Forecasting</div>
-      </a>
-    </div>
+    {% include project-cards.html %}
   </section>
 
-  <script src="/assets/js/typed.js"></script>
-</div>
+  <script src="/assets/js/typed_blink.js"></script>
 
 
-<script>
+  <script>
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('img').forEach(img => {
       if (img.closest('.no-lightbox')) {
         img.classList.remove('zoomable');  // remove lightbox trigger class
         img.removeAttribute('data-zoom-src');
-      }
+        }
+      });
     });
-  });
-</script>
+  </script>
+</div>
+
+

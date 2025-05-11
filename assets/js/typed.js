@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const phrases = ['a Data Scientist', 'an AI Explorer', 'a Problem Solver'];
+  const phrases = ['a Data Scientist', 'an AI Enthusiast', 'a Problem Solver'];
   let i = 0;
   const typed = document.querySelector('.typed-text');
   function type() {
