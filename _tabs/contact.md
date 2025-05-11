@@ -9,8 +9,11 @@ Feel free to reach out to me for opportunities, collaborations, or questions.
 ---
 
 ### 📫 Email
-**dwaipayan.roy@example.com**  
-(Replace with your real one, optionally protect using a contact form or image to avoid spam.)
+**Work - dwaipayan.roy@utdallas.edu**  
+**Personal - dwaipayan08.utd@gmail.com**  
+
+### 📫 Contact No.
+**+1 (972) 897-3997** 
 
 ---
 
@@ -22,4 +25,4 @@ Feel free to reach out to me for opportunities, collaborations, or questions.
 ---
 
 ### 📝 Let’s Build Something Together
-If you have an idea, a problem to solve, or just want to chat about AI, data, or startups—drop me a message!
+If you have an idea, a problem to solve, or just want to chat about AI, data, or startups- fel free to drop me a message!
