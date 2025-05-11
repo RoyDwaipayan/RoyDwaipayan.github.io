@@ -25,7 +25,7 @@ description: >- # used by seo meta and the atom feed
   platforms like Snowflake and Azure, with hands-on expertise in tools like Power BI, Qlik Sense, and Tableau.
 
 url: "https://RoyDwaipayan.github.io"
-baseurl: "/RoyDwaipayan"
+baseurl: ""
 
 github:
   username: RoyDwaipayan # change to your GitHub username
