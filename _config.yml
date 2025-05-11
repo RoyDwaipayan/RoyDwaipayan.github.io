@@ -14,12 +14,15 @@ timezone: Asia/Shanghai
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Dwaipayan Roy # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: Data Scientist | AI | Machine Learning # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Experienced Data Scientist with a strong background in Python, SQL, Machine Learning, Statistics, Neural Networks and a range of Data
+  Science tools, complemented by strong Business acumen, communication and critical thinking skills. Adept in developing and deploying
+  AI/ML models, Causal analytics, and automating data pipelines, handling large-scale datasets leveraging Spark. Proficient in cloud
+  platforms like Snowflake and Azure, with hands-on expertise in tools like Power BI, Qlik Sense, and Tableau.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
