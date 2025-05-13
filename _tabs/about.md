@@ -1,5 +1,6 @@
 ---
 title: "About Me"
+icon: fas fa-circle-info
 permalink: /about/
 layout: page
 ---

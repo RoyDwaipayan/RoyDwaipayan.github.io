@@ -1,5 +1,6 @@
 ---
 title: "Contact"
+icon: fas fa-address-card
 permalink: /contact/
 layout: page
 ---

@@ -66,9 +66,9 @@
 
 .home-landing .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 20px 0;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 15px 0;
   max-width: 1000px;
   margin: auto;
 }
@@ -135,4 +135,14 @@ a.no-lightbox img {
   to {
     opacity: 1;
   }
+}
+
+.nav-tabs .nav-link {
+  color: #ddd;
+}
+
+.nav-tabs .nav-link.active {
+  color: #ffd700;
+  background-color: #222;
+  border-color: #444 #444 #222;
 }

@@ -1,7 +1,13 @@
 ---
 title: "Resume"
+icon: fas fa-user-check
 permalink: /resume/
 layout: page
+---
+
+#### 📎 PDF Resume  
+👉 [Click here to view/download my resume](https://RoyDwaipayan.github.io/assets/assets/DwaipayanRoy_Resume.pdf)
+
 ---
 
 ### Dwaipayan Roy  
@@ -61,6 +67,3 @@ Analytics, Database Management, Natural Language Processing, Econometrics and Ti
 Bachelor of Engineering, Mechanical Engineering
 
 ---
-
-#### 📎 PDF Resume  
-👉 [Click here to view/download my resume](https://RoyDwaipayan.github.io/assets/assets/DwaipayanRoy_Resume.pdf)
