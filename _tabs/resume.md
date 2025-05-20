@@ -6,13 +6,13 @@ layout: page
 ---
 
 #### 📎 PDF Resume  
-👉 [Click here to view/download my resume](https://RoyDwaipayan.github.io/assets/assets/DwaipayanRoy_Resume.pdf)
+👉 [Click here to view/download my resume](https://RoyDwaipayan.github.io/assets/DwaipayanRoy_Resume.pdf)
 
 ---
 
 ### Dwaipayan Roy  
 **Data Scientist | Business Analytics & AI | M.S. @ UT Dallas**  
-📍 Richardson, TX • 📧 dwaipayan.roy@example.com • 🌐 [LinkedIn](https://www.linkedin.com/in/dwaipayan08/)
+📍 Richardson, TX • 📧 dwaipayan.roy@utdallas.edu • 🌐 [LinkedIn](https://www.linkedin.com/in/dwaipayan08/)
 
 ---
 
