@@ -26,4 +26,4 @@ Feel free to reach out to me for opportunities, collaborations, or questions.
 ---
 
 ### 📝 Let’s Build Something Together
-If you have an idea, a problem to solve, or just want to chat about AI, data, or startups- fel free to drop me a message!
+If you have an idea, a problem to solve, or just want to chat about AI, data, or startups- feel free to drop me a message!
