@@ -93,3 +93,28 @@ order: 3
   });
 </script>
 {% endraw %}
+
+{% raw %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const triggerTabList = document.querySelectorAll('#projectTabs a');
+
+    triggerTabList.forEach(triggerEl => {
+ 
+      const tab = new bootstrap.Tab(triggerEl);
+
+     
+      triggerEl.addEventListener('click', function (e) {
+        e.preventDefault();
+        tab.show();
+      });
+    });
+
+
+    const firstTab = document.querySelector('#projectTabs a.nav-link.active');
+    if (firstTab) {
+      bootstrap.Tab.getOrCreateInstance(firstTab).show();
+    }
+  });
+</script>
+{% endraw %}

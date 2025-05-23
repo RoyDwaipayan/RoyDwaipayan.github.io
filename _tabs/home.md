@@ -36,7 +36,7 @@ layout: page
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('img').forEach(img => {
       if (img.closest('.no-lightbox')) {
-        img.classList.remove('zoomable');  // remove lightbox trigger class
+        img.classList.remove('zoomable');
         img.removeAttribute('data-zoom-src');
         }
       });
