@@ -26,22 +26,18 @@ order: 3
     <div class="tab-pane fade show active" id="chess" role="tabpanel">
       <h2>Chess</h2>
         {% include chess.html %}
-        <noscript><p>Please enable JavaScript to view content.</p></noscript>
     </div>
     <div class="tab-pane fade" id="photo" role="tabpanel">
       <h4>Photography</h4>
         {% include photo.html %}
-        <noscript><p>Please enable JavaScript to view content.</p></noscript>
     </div>
     <div class="tab-pane fade" id="games" role="tabpanel">
       <h4>E-Sports</h4>
         {% include gaming.html %}
-        <noscript><p>Please enable JavaScript to view content.</p></noscript>
     </div>
     <div class="tab-pane fade" id="travel" role="tabpanel">
       <h4>Travel</h4>
         {% include travel.html %}
-        <noscript><p>Please enable JavaScript to view content.</p></noscript>
     </div>
   </div>
 </div>
