@@ -17,7 +17,7 @@ order: 3
       <a class="nav-link" id="research-tab" data-bs-toggle="tab" href="#games" role="tab">E-Sports/Gaming</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="research-tab" data-bs-toggle="tab" href="#travel" role="tab">Travel</a>
+      <a class="nav-link" id="travel-tab" data-bs-toggle="tab" href="#travel" role="tab">Travel</a>
     </li>
   </ul>
 
