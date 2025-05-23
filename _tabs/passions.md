@@ -77,3 +77,19 @@ order: 3
     });
   });
 </script>
+
+{% raw %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const triggerTabList = document.querySelectorAll('#projectTabs a');
+    triggerTabList.forEach(triggerEl => {
+      new bootstrap.Tab(triggerEl);
+    });
+
+    const firstTab = document.querySelector('#projectTabs a.nav-link.active');
+    if (firstTab) {
+      bootstrap.Tab.getOrCreateInstance(firstTab).show();
+    }
+  });
+</script>
+{% endraw %}
