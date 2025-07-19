@@ -7,10 +7,10 @@ order: 3
 <div class="hobbies-container">
   <div class="tab-wrapper">
     <div class="tab-header">
-      <button class="tab-btn active" onclick="switchTab('chess')">Chess</button>
-      <button class="tab-btn" onclick="switchTab('photo')">Photography</button>
-      <button class="tab-btn" onclick="switchTab('games')">E-Sports/Gaming</button>
-      <button class="tab-btn" onclick="switchTab('travel')">Travel</button>
+      <button class="tab-btn active" onclick="switchTab('chess', event)">Chess</button>
+      <button class="tab-btn" onclick="switchTab('photo', event)">Photography</button>
+      <button class="tab-btn" onclick="switchTab('games', event)">E-Sports/Gaming</button>
+      <button class="tab-btn" onclick="switchTab('travel', event)">Travel</button>
     </div>
     
     <div class="tab-body">
@@ -118,7 +118,7 @@ order: 3
 </style>
 
 <script>
-  function switchTab(tabName) {
+  function switchTab(tabName, event) {
     // Hide all tab contents
     var contents = document.querySelectorAll('.tab-content');
     for (var i = 0; i < contents.length; i++) {
@@ -135,11 +135,19 @@ order: 3
     document.getElementById(tabName).classList.add('active');
     
     // Add active class to the clicked button
-    event.target.classList.add('active');
+    if (event && event.target) {
+      event.target.classList.add('active');
+    }
   }
   
   // Initialize with first tab
   document.addEventListener('DOMContentLoaded', function() {
-    switchTab('chess');
+    // Set the first tab as active by default
+    var firstTab = document.querySelector('.tab-btn');
+    var firstContent = document.querySelector('.tab-content');
+    if (firstTab && firstContent) {
+      firstTab.classList.add('active');
+      firstContent.classList.add('active');
+    }
   });
 </script>

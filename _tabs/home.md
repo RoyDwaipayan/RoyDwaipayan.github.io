@@ -464,6 +464,9 @@ layout: page
     color: inherit;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
   }
 
   .project-card:hover {
@@ -475,6 +478,7 @@ layout: page
   .project-image {
     height: 200px;
     overflow: hidden;
+    flex-shrink: 0;
   }
 
   .project-image img {
@@ -490,6 +494,9 @@ layout: page
 
   .project-content {
     padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .project-content h3 {
@@ -502,6 +509,7 @@ layout: page
     color: #ccc;
     line-height: 1.6;
     font-size: 0.95rem;
+    flex: 1;
   }
 
   /* Responsive Design */
@@ -529,6 +537,27 @@ layout: page
 
     .projects-grid {
       grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+      height: auto;
+      min-height: 350px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .project-card {
+      height: auto;
+      min-height: 300px;
+    }
+    
+    .project-content {
+      padding: 20px;
     }
   }
 </style>
