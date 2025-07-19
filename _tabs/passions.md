@@ -6,11 +6,11 @@ order: 3
 
 <div class="hobbies-container">
   <div class="tab-wrapper">
-    <div class="tab-header">
-      <button class="tab-btn active" onclick="switchTab('chess', event)">Chess</button>
-      <button class="tab-btn" onclick="switchTab('photo', event)">Photography</button>
-      <button class="tab-btn" onclick="switchTab('games', event)">E-Sports/Gaming</button>
-      <button class="tab-btn" onclick="switchTab('travel', event)">Travel</button>
+    <div class="tab-header" id="hobby-tabs">
+      <button class="tab-btn active" data-tab="chess">Chess</button>
+      <button class="tab-btn" data-tab="photo">Photography</button>
+      <button class="tab-btn" data-tab="games">E-Sports/Gaming</button>
+      <button class="tab-btn" data-tab="travel">Travel</button>
     </div>
     
     <div class="tab-body">
@@ -66,6 +66,7 @@ order: 3
     cursor: pointer;
     transition: all 0.3s ease;
     border-bottom: 3px solid transparent;
+    position: relative;
   }
   
   .tab-btn:hover {
@@ -79,6 +80,16 @@ order: 3
     border-bottom-color: #ffd700;
   }
   
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #ffd700;
+  }
+  
   .tab-body {
     padding: 30px;
     min-height: 500px;
@@ -86,11 +97,15 @@ order: 3
   
   .tab-content {
     display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
   }
   
   .tab-content.active {
     display: block;
-    animation: fadeIn 0.5s ease-in;
+    opacity: 1;
+    transform: translateY(0);
   }
   
   .tab-content h2 {
@@ -99,11 +114,6 @@ order: 3
     font-size: 28px;
     border-bottom: 2px solid #444;
     padding-bottom: 10px;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
   }
   
   @media (max-width: 768px) {
@@ -118,36 +128,49 @@ order: 3
 </style>
 
 <script>
-  function switchTab(tabName, event) {
-    // Hide all tab contents
-    var contents = document.querySelectorAll('.tab-content');
-    for (var i = 0; i < contents.length; i++) {
-      contents[i].classList.remove('active');
-    }
-    
-    // Remove active class from all buttons
-    var buttons = document.querySelectorAll('.tab-btn');
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove('active');
-    }
-    
-    // Show the selected tab content
-    document.getElementById(tabName).classList.add('active');
-    
-    // Add active class to the clicked button
-    if (event && event.target) {
-      event.target.classList.add('active');
-    }
-  }
-  
-  // Initialize with first tab
   document.addEventListener('DOMContentLoaded', function() {
-    // Set the first tab as active by default
-    var firstTab = document.querySelector('.tab-btn');
-    var firstContent = document.querySelector('.tab-content');
-    if (firstTab && firstContent) {
-      firstTab.classList.add('active');
-      firstContent.classList.add('active');
+    const tabContainer = document.getElementById('hobby-tabs');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    
+    // Function to switch tabs
+    function switchTab(tabId) {
+      // Hide all tab contents
+      tabContents.forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      // Remove active class from all buttons
+      tabButtons.forEach(button => {
+        button.classList.remove('active');
+      });
+      
+      // Show the selected tab content
+      const selectedContent = document.getElementById(tabId);
+      if (selectedContent) {
+        selectedContent.classList.add('active');
+      }
+      
+      // Add active class to the clicked button
+      const activeButton = document.querySelector(`[data-tab="${tabId}"]`);
+      if (activeButton) {
+        activeButton.classList.add('active');
+      }
+    }
+    
+    // Add click event listeners to all tab buttons
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const tabId = this.getAttribute('data-tab');
+        switchTab(tabId);
+      });
+    });
+    
+    // Initialize with first tab
+    if (tabButtons.length > 0) {
+      const firstTabId = tabButtons[0].getAttribute('data-tab');
+      switchTab(firstTabId);
     }
   });
 </script>
