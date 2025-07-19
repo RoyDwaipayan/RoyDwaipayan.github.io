@@ -88,7 +88,7 @@ order: 3
   }
 
   .tab-pane.active {
-    display: block;
+    display: block !important;
   }
 
   .tab-pane h2 {
@@ -122,14 +122,30 @@ order: 3
 </style>
 
 <script>
+  // Wait for DOM to be fully loaded
   document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing tabs...');
+    
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabPanes = document.querySelectorAll('.tab-pane');
 
+    console.log('Found', tabButtons.length, 'tab buttons');
+    console.log('Found', tabPanes.length, 'tab panes');
+
     function switchTab(tabId) {
+      console.log('Switching to tab:', tabId);
+      
       // Remove active class from all buttons and panes
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      tabPanes.forEach(pane => pane.classList.remove('active'));
+      tabButtons.forEach(btn => {
+        btn.classList.remove('active');
+        console.log('Removed active from button:', btn.textContent);
+      });
+      
+      tabPanes.forEach(pane => {
+        pane.classList.remove('active');
+        pane.style.display = 'none';
+        console.log('Removed active from pane:', pane.id);
+      });
 
       // Add active class to clicked button and corresponding pane
       const activeButton = document.querySelector(`[data-tab="${tabId}"]`);
@@ -138,13 +154,20 @@ order: 3
       if (activeButton && activePane) {
         activeButton.classList.add('active');
         activePane.classList.add('active');
+        activePane.style.display = 'block';
+        console.log('Activated button:', activeButton.textContent);
+        console.log('Activated pane:', activePane.id);
+      } else {
+        console.error('Could not find button or pane for tabId:', tabId);
       }
     }
 
     // Add click event listeners to all tab buttons
     tabButtons.forEach(button => {
-      button.addEventListener('click', function() {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
         const tabId = this.getAttribute('data-tab');
+        console.log('Button clicked:', this.textContent, 'for tab:', tabId);
         switchTab(tabId);
       });
     });
@@ -152,6 +175,7 @@ order: 3
     // Initialize with first tab active
     if (tabButtons.length > 0) {
       const firstTabId = tabButtons[0].getAttribute('data-tab');
+      console.log('Initializing with first tab:', firstTabId);
       switchTab(firstTabId);
     }
   });
