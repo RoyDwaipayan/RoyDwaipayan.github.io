@@ -135,7 +135,65 @@ layout: page
   <section class="projects-section">
     <h2 class="section-title">Featured Projects</h2>
     <div class="projects-grid">
-      {% include project-cards.html %}
+      <a href="/project/playstation" class="project-card">
+        <div class="project-image">
+          <img src="/assets/img/playstation.png" alt="E-sports Analytics with ML">
+        </div>
+        <div class="project-content">
+          <h3>E-sports Analytics with ML</h3>
+          <p>Advanced analytics and machine learning solutions for gaming industry insights</p>
+        </div>
+      </a>
+
+      <a href="/project/volkswagen" class="project-card">
+        <div class="project-image">
+          <img src="/assets/img/volks.png" alt="CRM Development and Analytics">
+        </div>
+        <div class="project-content">
+          <h3>CRM Development and Analytics</h3>
+          <p>Comprehensive CRM system with advanced analytics and reporting capabilities</p>
+        </div>
+      </a>
+
+      <a href="/project/hcsc" class="project-card">
+        <div class="project-image">
+          <img src="/assets/img/hcsc.png" alt="Customer Automation">
+        </div>
+        <div class="project-content">
+          <h3>Customer Automation</h3>
+          <p>Intelligent automation solutions for enhanced customer experience</p>
+        </div>
+      </a>
+
+      <a href="/project/diabetes" class="project-card">
+        <div class="project-image">
+          <img src="/assets/img/diabetes.png" alt="Diabetes Prediction">
+        </div>
+        <div class="project-content">
+          <h3>Diabetes Prediction</h3>
+          <p>Machine learning model for early diabetes risk assessment and prediction</p>
+        </div>
+      </a>
+
+      <a href="/project/llms" class="project-card">
+        <div class="project-image">
+          <img src="/assets/img/rag.png" alt="Agentic RAGs">
+        </div>
+        <div class="project-content">
+          <h3>Agentic RAGs</h3>
+          <p>Advanced RAG systems with intelligent agent capabilities for enhanced information retrieval</p>
+        </div>
+      </a>
+
+      <a href="/project/telco" class="project-card">
+        <div class="project-image">
+          <img src="/assets/img/telco.png" alt="Telecom Churn Prediction">
+        </div>
+        <div class="project-content">
+          <h3>Telecom Churn Prediction</h3>
+          <p>Predictive analytics for customer churn prevention in telecommunications</p>
+        </div>
+      </a>
     </div>
   </section>
 </div>
@@ -396,6 +454,54 @@ layout: page
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
+  }
+
+  .project-card {
+    background: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+  }
+
+  .project-image {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover .project-image img {
+    transform: scale(1.05);
+  }
+
+  .project-content {
+    padding: 25px;
+  }
+
+  .project-content h3 {
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+  }
+
+  .project-content p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.95rem;
   }
 
   /* Responsive Design */

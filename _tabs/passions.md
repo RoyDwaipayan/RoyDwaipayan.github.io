@@ -4,32 +4,32 @@ icon: fas fa-horse-head
 order: 3
 ---
 
-<div class="hobbies-section">
-  <div class="tab-container">
-    <div class="tab-buttons">
-      <button onclick="showTab('chess')" class="tab-btn active" id="chess-btn">Chess</button>
-      <button onclick="showTab('photo')" class="tab-btn" id="photo-btn">Photography</button>
-      <button onclick="showTab('games')" class="tab-btn" id="games-btn">E-Sports/Gaming</button>
-      <button onclick="showTab('travel')" class="tab-btn" id="travel-btn">Travel</button>
+<div class="hobbies-container">
+  <div class="tab-wrapper">
+    <div class="tab-header">
+      <button class="tab-btn active" onclick="switchTab('chess')">Chess</button>
+      <button class="tab-btn" onclick="switchTab('photo')">Photography</button>
+      <button class="tab-btn" onclick="switchTab('games')">E-Sports/Gaming</button>
+      <button class="tab-btn" onclick="switchTab('travel')">Travel</button>
     </div>
     
-    <div class="tab-content">
-      <div id="chess" class="tab-pane active">
+    <div class="tab-body">
+      <div id="chess" class="tab-content active">
         <h2>Chess</h2>
         {% include chess.html %}
       </div>
       
-      <div id="photo" class="tab-pane">
+      <div id="photo" class="tab-content">
         <h2>Photography</h2>
         {% include photo.html %}
       </div>
       
-      <div id="games" class="tab-pane">
+      <div id="games" class="tab-content">
         <h2>E-Sports & Gaming</h2>
         {% include gaming.html %}
       </div>
       
-      <div id="travel" class="tab-pane">
+      <div id="travel" class="tab-content">
         <h2>Travel</h2>
         {% include travel.html %}
       </div>
@@ -38,18 +38,18 @@ order: 3
 </div>
 
 <style>
-  .hobbies-section {
+  .hobbies-container {
     margin: 30px 0;
   }
   
-  .tab-container {
+  .tab-wrapper {
     background: #1a1a1a;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
   
-  .tab-buttons {
+  .tab-header {
     display: flex;
     background: #222;
     border-bottom: 2px solid #444;
@@ -79,21 +79,21 @@ order: 3
     border-bottom-color: #ffd700;
   }
   
-  .tab-content {
+  .tab-body {
     padding: 30px;
     min-height: 500px;
   }
   
-  .tab-pane {
+  .tab-content {
     display: none;
   }
   
-  .tab-pane.active {
+  .tab-content.active {
     display: block;
     animation: fadeIn 0.5s ease-in;
   }
   
-  .tab-pane h2 {
+  .tab-content h2 {
     color: #ffd700;
     margin-bottom: 25px;
     font-size: 28px;
@@ -107,7 +107,7 @@ order: 3
   }
   
   @media (max-width: 768px) {
-    .tab-buttons {
+    .tab-header {
       flex-direction: column;
     }
     
@@ -118,28 +118,28 @@ order: 3
 </style>
 
 <script>
-  function showTab(tabName) {
-    // Hide all tab panes
-    var panes = document.getElementsByClassName('tab-pane');
-    for (var i = 0; i < panes.length; i++) {
-      panes[i].classList.remove('active');
+  function switchTab(tabName) {
+    // Hide all tab contents
+    var contents = document.querySelectorAll('.tab-content');
+    for (var i = 0; i < contents.length; i++) {
+      contents[i].classList.remove('active');
     }
     
     // Remove active class from all buttons
-    var buttons = document.getElementsByClassName('tab-btn');
+    var buttons = document.querySelectorAll('.tab-btn');
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].classList.remove('active');
     }
     
-    // Show the selected tab pane
+    // Show the selected tab content
     document.getElementById(tabName).classList.add('active');
     
     // Add active class to the clicked button
-    document.getElementById(tabName + '-btn').classList.add('active');
+    event.target.classList.add('active');
   }
   
   // Initialize with first tab
   document.addEventListener('DOMContentLoaded', function() {
-    showTab('chess');
+    switchTab('chess');
   });
 </script>
