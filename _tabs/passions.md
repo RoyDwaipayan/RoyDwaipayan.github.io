@@ -6,30 +6,37 @@ order: 3
 
 <div class="hobbies-container">
   <div class="tab-wrapper">
-    <div class="tab-header" id="hobby-tabs">
-      <button class="tab-btn active" data-tab="chess">Chess</button>
-      <button class="tab-btn" data-tab="photo">Photography</button>
-      <button class="tab-btn" data-tab="games">E-Sports/Gaming</button>
-      <button class="tab-btn" data-tab="travel">Travel</button>
+    <div class="tab-header">
+      <input type="radio" name="hobby-tabs" id="chess-tab" class="tab-radio" checked>
+      <label for="chess-tab" class="tab-btn">Chess</label>
+      
+      <input type="radio" name="hobby-tabs" id="photo-tab" class="tab-radio">
+      <label for="photo-tab" class="tab-btn">Photography</label>
+      
+      <input type="radio" name="hobby-tabs" id="games-tab" class="tab-radio">
+      <label for="games-tab" class="tab-btn">E-Sports/Gaming</label>
+      
+      <input type="radio" name="hobby-tabs" id="travel-tab" class="tab-radio">
+      <label for="travel-tab" class="tab-btn">Travel</label>
     </div>
     
     <div class="tab-body">
-      <div id="chess" class="tab-content active">
+      <div id="chess-content" class="tab-content">
         <h2>Chess</h2>
         {% include chess.html %}
       </div>
       
-      <div id="photo" class="tab-content">
+      <div id="photo-content" class="tab-content">
         <h2>Photography</h2>
         {% include photo.html %}
       </div>
       
-      <div id="games" class="tab-content">
+      <div id="games-content" class="tab-content">
         <h2>E-Sports & Gaming</h2>
         {% include gaming.html %}
       </div>
       
-      <div id="travel" class="tab-content">
+      <div id="travel-content" class="tab-content">
         <h2>Travel</h2>
         {% include travel.html %}
       </div>
@@ -53,6 +60,11 @@ order: 3
     display: flex;
     background: #222;
     border-bottom: 2px solid #444;
+    position: relative;
+  }
+  
+  .tab-radio {
+    display: none;
   }
   
   .tab-btn {
@@ -67,6 +79,8 @@ order: 3
     transition: all 0.3s ease;
     border-bottom: 3px solid transparent;
     position: relative;
+    text-align: center;
+    display: block;
   }
   
   .tab-btn:hover {
@@ -74,13 +88,13 @@ order: 3
     color: #ffd700;
   }
   
-  .tab-btn.active {
+  .tab-radio:checked + .tab-btn {
     background: #1a1a1a;
     color: #ffd700;
     border-bottom-color: #ffd700;
   }
   
-  .tab-btn.active::after {
+  .tab-radio:checked + .tab-btn::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -116,6 +130,16 @@ order: 3
     padding-bottom: 10px;
   }
   
+  /* CSS-only tab switching */
+  #chess-tab:checked ~ .tab-body #chess-content,
+  #photo-tab:checked ~ .tab-body #photo-content,
+  #games-tab:checked ~ .tab-body #games-content,
+  #travel-tab:checked ~ .tab-body #travel-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
   @media (max-width: 768px) {
     .tab-header {
       flex-direction: column;
@@ -128,49 +152,39 @@ order: 3
 </style>
 
 <script>
+  // Fallback JavaScript for additional functionality
   document.addEventListener('DOMContentLoaded', function() {
-    const tabContainer = document.getElementById('hobby-tabs');
+    console.log('Hobbies page loaded');
+    
+    // Add smooth transitions when tabs are clicked
+    const tabRadios = document.querySelectorAll('.tab-radio');
     const tabContents = document.querySelectorAll('.tab-content');
-    const tabButtons = document.querySelectorAll('.tab-btn');
     
-    // Function to switch tabs
-    function switchTab(tabId) {
-      // Hide all tab contents
-      tabContents.forEach(content => {
-        content.classList.remove('active');
-      });
-      
-      // Remove active class from all buttons
-      tabButtons.forEach(button => {
-        button.classList.remove('active');
-      });
-      
-      // Show the selected tab content
-      const selectedContent = document.getElementById(tabId);
-      if (selectedContent) {
-        selectedContent.classList.add('active');
-      }
-      
-      // Add active class to the clicked button
-      const activeButton = document.querySelector(`[data-tab="${tabId}"]`);
-      if (activeButton) {
-        activeButton.classList.add('active');
-      }
-    }
-    
-    // Add click event listeners to all tab buttons
-    tabButtons.forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const tabId = this.getAttribute('data-tab');
-        switchTab(tabId);
+    tabRadios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        // Remove active class from all contents
+        tabContents.forEach(content => {
+          content.classList.remove('active');
+        });
+        
+        // Add active class to selected content
+        const targetId = this.id.replace('-tab', '-content');
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.classList.add('active');
+        }
       });
     });
     
-    // Initialize with first tab
-    if (tabButtons.length > 0) {
-      const firstTabId = tabButtons[0].getAttribute('data-tab');
-      switchTab(firstTabId);
+    // Initialize first tab
+    const firstRadio = document.querySelector('.tab-radio');
+    if (firstRadio) {
+      firstRadio.checked = true;
+      const firstContentId = firstRadio.id.replace('-tab', '-content');
+      const firstContent = document.getElementById(firstContentId);
+      if (firstContent) {
+        firstContent.classList.add('active');
+      }
     }
   });
 </script>
