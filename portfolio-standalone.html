@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwaipayan Roy - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 12px 24px;
+            background: #222;
+            color: #ddd;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: #ffd700;
+            color: #1a1a1a;
+            border-color: #ffd700;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hobbies Tabs */
+        .hobbies-container {
+            margin: 30px 0;
+        }
+        
+        .tab-wrapper {
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tab-header {
+            display: flex;
+            background: #222;
+            border-bottom: 2px solid #444;
+        }
+        
+        .tab-radio {
+            display: none;
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: transparent;
+            border: none;
+            color: #ddd;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            position: relative;
+            text-align: center;
+            display: block;
+        }
+        
+        .tab-btn:hover {
+            background: #333;
+            color: #ffd700;
+        }
+        
+        .tab-radio:checked + .tab-btn {
+            background: #1a1a1a;
+            color: #ffd700;
+            border-bottom-color: #ffd700;
+        }
+        
+        .tab-radio:checked + .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #ffd700;
+        }
+        
+        .tab-body {
+            padding: 30px;
+            min-height: 500px;
+        }
+        
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tab-content h2 {
+            color: #ffd700;
+            margin-bottom: 25px;
+            font-size: 28px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+        }
+        
+        /* CSS-only tab switching */
+        #chess-tab:checked ~ .tab-body #chess-content,
+        #photo-tab:checked ~ .tab-body #photo-content,
+        #games-tab:checked ~ .tab-body #games-content,
+        #travel-tab:checked ~ .tab-body #travel-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Content Cards */
+        .content-card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffd700;
+        }
+
+        .content-card h3 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .content-card ul {
+            margin-left: 20px;
+        }
+
+        .content-card li {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-header {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                border-bottom: 1px solid #444;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="https://via.placeholder.com/150x150/ffd700/1a1a1a?text=DR" alt="Dwaipayan Roy" class="profile-img">
+            <h1>Dwaipayan Roy</h1>
+            <h2>Data Scientist & AI Engineer</h2>
+            <p>Transforming data into actionable insights and building intelligent solutions</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav">
+            <button class="nav-btn active" onclick="showSection('home')">Home</button>
+            <button class="nav-btn" onclick="showSection('hobbies')">Hobbies</button>
+            <button class="nav-btn" onclick="showSection('about')">About</button>
+            <button class="nav-btn" onclick="showSection('contact')">Contact</button>
+        </div>
+
+        <!-- Home Section -->
+        <div id="home" class="content-section active">
+            <h2>Welcome to My Portfolio</h2>
+            <div class="content-card">
+                <h3>About Me</h3>
+                <p>I'm a passionate Data Scientist with expertise in machine learning, AI, and business analytics. Currently working as a Technology Consultant at PwC, I specialize in transforming complex data into strategic insights that drive business decisions.</p>
+            </div>
+            <div class="content-card">
+                <h3>Skills</h3>
+                <ul>
+                    <li>Python, SQL, R, Java</li>
+                    <li>Machine Learning & Deep Learning</li>
+                    <li>Power BI, Tableau, Azure</li>
+                    <li>TensorFlow, PyTorch, Scikit-learn</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Hobbies Section -->
+        <div id="hobbies" class="content-section">
+            <h2>My Hobbies</h2>
+            <div class="hobbies-container">
+                <div class="tab-wrapper">
+                    <div class="tab-header">
+                        <input type="radio" name="hobby-tabs" id="chess-tab" class="tab-radio" checked>
+                        <label for="chess-tab" class="tab-btn">Chess</label>
+                        
+                        <input type="radio" name="hobby-tabs" id="photo-tab" class="tab-radio">
+                        <label for="photo-tab" class="tab-btn">Photography</label>
+                        
+                        <input type="radio" name="hobby-tabs" id="games-tab" class="tab-radio">
+                        <label for="games-tab" class="tab-btn">E-Sports/Gaming</label>
+                        
+                        <input type="radio" name="hobby-tabs" id="travel-tab" class="tab-radio">
+                        <label for="travel-tab" class="tab-btn">Travel</label>
+                    </div>
+                    
+                    <div class="tab-body">
+                        <div id="chess-content" class="tab-content">
+                            <h2>Chess</h2>
+                            <div class="content-card">
+                                <h3>Strategic Thinking</h3>
+                                <p>Chess is more than a game - it's a mental workout that sharpens strategic thinking, pattern recognition, and decision-making under pressure.</p>
+                                <ul>
+                                    <li>Rating: 1500+ on Chess.com</li>
+                                    <li>Favorite Opening: Sicilian Defense</li>
+                                    <li>Style: Positional player</li>
+                                    <li>Username: BlizzarD_08</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div id="photo-content" class="tab-content">
+                            <h2>Photography</h2>
+                            <div class="content-card">
+                                <h3>Capturing Moments</h3>
+                                <p>Photography allows me to capture the beauty of the world around me, from landscapes to street photography.</p>
+                                <ul>
+                                    <li>Favorite Subjects: Nature and Street</li>
+                                    <li>Equipment: DSLR and Mobile</li>
+                                    <li>Style: Documentary and Landscape</li>
+                                    <li>Recent: Snow photography in Texas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div id="games-content" class="tab-content">
+                            <h2>E-Sports & Gaming</h2>
+                            <div class="content-card">
+                                <h3>Gaming Passion</h3>
+                                <p>From competitive gaming to immersive RPGs, gaming provides both entertainment and strategic thinking challenges.</p>
+                                <ul>
+                                    <li>Favorite Genres: RPG, Strategy, FPS</li>
+                                    <li>Platforms: PC, PlayStation</li>
+                                    <li>Focus: Story-driven games</li>
+                                    <li>Recent: Elden Ring, Baldur's Gate 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div id="travel-content" class="tab-content">
+                            <h2>Travel</h2>
+                            <div class="content-card">
+                                <h3>Exploring the World</h3>
+                                <p>Traveling allows me to experience different cultures, landscapes, and perspectives from around the world.</p>
+                                <ul>
+                                    <li>Favorite Destinations: Mountains and Cities</li>
+                                    <li>Travel Style: Adventure and Culture</li>
+                                    <li>Photography: Always capturing memories</li>
+                                    <li>Recent: Kashmir, Himachal Pradesh</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="about" class="content-section">
+            <h2>About Me</h2>
+            <div class="content-card">
+                <h3>Experience</h3>
+                <p>With experience at Fractal.ai and PwC, I've delivered solutions across healthcare, finance, and automotive sectors. My approach combines technical expertise with business acumen to create impactful, scalable solutions.</p>
+            </div>
+            <div class="content-card">
+                <h3>Education</h3>
+                <p>M.S. in Data Science from UT Dallas, with a strong foundation in statistics, machine learning, and business analytics.</p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="content-section">
+            <h2>Get In Touch</h2>
+            <div class="content-card">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>Email: dwaipayan.roy@utdallas.edu</li>
+                    <li>LinkedIn: linkedin.com/in/dwaipayan08</li>
+                    <li>GitHub: github.com/RoyDwaipayan</li>
+                    <li>Location: Richardson, TX</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+            
+            // Update navigation buttons
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Portfolio loaded successfully');
+            
+            // Ensure first tab is active
+            const firstRadio = document.querySelector('.tab-radio');
+            if (firstRadio) {
+                firstRadio.checked = true;
+            }
+        });
+    </script>
+</body>
+</html> 

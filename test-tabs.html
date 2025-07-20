@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .hobbies-container {
+            margin: 30px 0;
+        }
+        
+        .tab-wrapper {
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tab-header {
+            display: flex;
+            background: #222;
+            border-bottom: 2px solid #444;
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: transparent;
+            border: none;
+            color: #ddd;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            position: relative;
+        }
+        
+        .tab-btn:hover {
+            background: #333;
+            color: #ffd700;
+        }
+        
+        .tab-btn.active {
+            background: #1a1a1a;
+            color: #ffd700;
+            border-bottom-color: #ffd700;
+        }
+        
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #ffd700;
+        }
+        
+        .tab-body {
+            padding: 30px;
+            min-height: 500px;
+        }
+        
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tab-content h2 {
+            color: #ffd700;
+            margin-bottom: 25px;
+            font-size: 28px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+        }
+        
+        .test-content {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .tab-header {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                border-bottom: 1px solid #444;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hobbies-container">
+        <div class="tab-wrapper">
+            <div class="tab-header" id="hobby-tabs">
+                <button class="tab-btn active" data-tab="chess">Chess</button>
+                <button class="tab-btn" data-tab="photo">Photography</button>
+                <button class="tab-btn" data-tab="games">E-Sports/Gaming</button>
+                <button class="tab-btn" data-tab="travel">Travel</button>
+            </div>
+            
+            <div class="tab-body">
+                <div id="chess" class="tab-content active">
+                    <h2>Chess</h2>
+                    <div class="test-content">
+                        <h3>Strategic Thinking</h3>
+                        <p>Chess is more than a game - it's a mental workout that sharpens strategic thinking, pattern recognition, and decision-making under pressure.</p>
+                        <ul>
+                            <li>Rating: 1500+ on Chess.com</li>
+                            <li>Favorite Opening: Sicilian Defense</li>
+                            <li>Style: Positional player</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="photo" class="tab-content">
+                    <h2>Photography</h2>
+                    <div class="test-content">
+                        <h3>Capturing Moments</h3>
+                        <p>Photography allows me to capture the beauty of the world around me, from landscapes to street photography.</p>
+                        <ul>
+                            <li>Favorite Subjects: Nature and Street</li>
+                            <li>Equipment: DSLR and Mobile</li>
+                            <li>Style: Documentary and Landscape</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="games" class="tab-content">
+                    <h2>E-Sports & Gaming</h2>
+                    <div class="test-content">
+                        <h3>Gaming Passion</h3>
+                        <p>From competitive gaming to immersive RPGs, gaming provides both entertainment and strategic thinking challenges.</p>
+                        <ul>
+                            <li>Favorite Genres: RPG, Strategy, FPS</li>
+                            <li>Platforms: PC, PlayStation</li>
+                            <li>Focus: Story-driven games</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="travel" class="tab-content">
+                    <h2>Travel</h2>
+                    <div class="test-content">
+                        <h3>Exploring the World</h3>
+                        <p>Traveling allows me to experience different cultures, landscapes, and perspectives from around the world.</p>
+                        <ul>
+                            <li>Favorite Destinations: Mountains and Cities</li>
+                            <li>Travel Style: Adventure and Culture</li>
+                            <li>Photography: Always capturing memories</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing tabs...');
+            
+            const tabContainer = document.getElementById('hobby-tabs');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            
+            console.log('Found elements:', {
+                tabContainer: !!tabContainer,
+                tabContents: tabContents.length,
+                tabButtons: tabButtons.length
+            });
+            
+            // Function to switch tabs
+            function switchTab(tabId) {
+                console.log('Switching to tab:', tabId);
+                
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Remove active class from all buttons
+                tabButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+                
+                // Show the selected tab content
+                const selectedContent = document.getElementById(tabId);
+                if (selectedContent) {
+                    selectedContent.classList.add('active');
+                    console.log('Activated content for:', tabId);
+                } else {
+                    console.error('Content not found for:', tabId);
+                }
+                
+                // Add active class to the clicked button
+                const activeButton = document.querySelector(`[data-tab="${tabId}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                    console.log('Activated button for:', tabId);
+                } else {
+                    console.error('Button not found for:', tabId);
+                }
+            }
+            
+            // Add click event listeners to all tab buttons
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tabId = this.getAttribute('data-tab');
+                    console.log('Button clicked:', tabId);
+                    switchTab(tabId);
+                });
+            });
+            
+            // Initialize with first tab
+            if (tabButtons.length > 0) {
+                const firstTabId = tabButtons[0].getAttribute('data-tab');
+                console.log('Initializing with first tab:', firstTabId);
+                switchTab(firstTabId);
+            }
+            
+            console.log('Tab initialization complete');
+        });
+    </script>
+</body>
+</html> 
